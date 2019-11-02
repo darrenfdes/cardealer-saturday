@@ -1,0 +1,22 @@
+<html>
+<%if(result.length>0){%>
+<%for(let r of result){%>
+<div style="width:50%" style="border:solid 1px black">
+<p>Vehicle id:<%=r.vid%>
+<br>Vehicle name:<%=r.vname%>
+<br>Vehicle colour:<%=r.vcolor%>
+<br>Vehicle price:<%=r.vprice%>
+<br>Vehicle year:<%=r.vyear%></p>
+</div>
+<%}%>
+<%}%>
+
+<footer style =" position: absolute;" style="bottom: 0">
+	<p style="font-size: 20px" >&copy; 2019 Goa Motors LLP</p>
+  <p>Contact information:
+  <a href="mailto:goamotors@gmail.com">
+ <br> Email: goamotors@gmail.com</a>
+    <br><a href="tel:6481234674">
+              Mobile:+91 6481234674 </a> </p>
+</footer>
+</html>
