@@ -12,13 +12,13 @@ var con=mysql.createConnection({
 /* GET home page. */
 router.post('/', function(req, res, next) {
   var id=req.body.id;
-  const queryString = "DELETE from customer WHERE cid = '?'";
-  console.log(name);
-  con.query(queryString,[id],function(err,result,field){
+  const queryString = "DELETE from customer WHERE cid = ?";
+  con.query(queryString,[parseInt(id)],function(err,result,field){
     if(err){
-    console.log("TCL: err", err)
+    console.log("TCL: err", err);
     return
     }
+    console.log('Succesfully deleted ')
   	res.redirect('/pager2');
   }); 
 
