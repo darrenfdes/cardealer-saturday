@@ -12,11 +12,11 @@ var con=mysql.createConnection({
 
 // var input = prompt('Enter the customers id','cid');
 // var id = parseInt(input,10);
-const queryString = "select * from cutomer where cid = '?'";
+const queryString = "select * from cutomer where cid = ?";
 /* GET home page. */
 router.get('/', function(req, res, next) {
     const id = req.body.id;
-  con.query(queryString,[id],function(err,result,field){
+  con.query(queryString,[parseInt(id)],function(err,result,field){
       if(err){
       console.log("TCL: err", err)
       }
