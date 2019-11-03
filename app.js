@@ -23,10 +23,14 @@ con.connect(function(err)
 var indexRouter = require('./routes/index');
 var pager2Router = require('./routes/pager2');
 var addcustomerRouter = require('./routes/addcustomer');
+var deletecustomerRouter = require('./routes/deletecustomer');
 var addvehicleRouter = require('./routes/addvehicle');
 var loginRouter = require('./routes/login');
 var processRouter = require('./routes/process');
+var processdeleter = require('./routes/processdelete');
 var dummy=require('./routes/dummy');
+var dummysearch = require('./routes/dummysearch');
+var dummyinput = require('./routes/dummyinput');
 var checkinventory = require('./routes/checkinventory');
 var app = express();
 
@@ -43,10 +47,14 @@ app.use(express.static(__dirname + '/public'));
 app.use('/', loginRouter);
 app.use('/pager2', pager2Router);
 app.use('/addcustomer', addcustomerRouter);
+app.use('/deletecustomer',deletecustomerRouter);
 app.use('/addvehicle',addvehicleRouter);
 // app.use('/login', loginRouter);
 app.use('/process', processRouter);
+app.use('/processdelete',processdeleter);
 app.use('/dummy',dummy);
+app.use('/dummysearch',dummysearch);
+app.use('/dummyinput',dummyinput);
 app.use('/checkinventory',checkinventory);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

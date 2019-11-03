@@ -21,7 +21,10 @@ router.post('/', function(req, res, next) {
 
   console.log(name);
   con.query("insert into vehicle(vname,vcolour,vprice,vyear) values(?,?,?,?)",[name,colour,price,year],function(err,result,field){
-    
+    if(err){
+      console.log('Error adding new vehicle '+err)
+      throw err
+    }
   	res.redirect('/pager2');
   }); 
 
